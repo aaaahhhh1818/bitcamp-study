@@ -29,5 +29,3 @@ public class Exam0510 {
     int[] arr3 = new int[2147483647];
   }
 }
-
-
