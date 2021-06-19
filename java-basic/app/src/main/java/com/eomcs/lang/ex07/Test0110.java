@@ -36,5 +36,5 @@ public class Test0110 {
     starLen += 2;
 
   }
-}
+
 }
