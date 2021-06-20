@@ -2,8 +2,7 @@ package com.eomcs.lang.ex07;
 
 import java.util.Scanner;
 
-//# 메서드 : 사용 전
-//
+
 public class Test0110 {
 
   static void printSpaces(int len) {
@@ -18,23 +17,22 @@ public class Test0110 {
     }
   }
 
-  static void main(String[] args) {
+  public static int getSpaceLength(int totalStar , int displatStar) {
+    return (totalStar - displatStar) / 2;
+  }
+
+  public static void main(String[] args) {
 
     Scanner keyScan = new Scanner(System.in);
     System.out.print("밑변의 길이? ");
     int len = keyScan.nextInt();
     keyScan.close();
 
-    int starLen = 1;
-    while (starLen <= len) {
-      printSpaces((len - starLen) / 2);
-      printStars(len);
+    for (int starLen = 1; starLen <= len; starLen += 2) {
+      printSpaces(getSpaceLength(len, starLen));
+      printStars(starLen);
+      System.out.println();
     }
-
-    // 출력 줄 바꾸기
-    System.out.println();
-    starLen += 2;
-
   }
 
 }
