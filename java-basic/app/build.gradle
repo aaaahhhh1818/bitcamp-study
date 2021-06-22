@@ -1,31 +1,17 @@
 plugins {
-<<<<<<< HEAD
     id 'java' // 자바 관련 작업을 수행할 때 사용할 도구 추가
     id 'eclipse' // 이클립스 관련 작업을 수행할 때 사용할 도구 추가
 }
 
 // 자바 소스를 컴파일 할 때 적용할 옵션
-=======
-    // Apply the application plugin to add support for building a CLI application in Java.
-    id 'application'
-    id 'java'
-    id 'eclipse'
-}
-
-// 자바 소스를 컴파일 할 때 적용할 옵션
-// => 자바 소스를 컴파일 할 때 적용할 옵션
->>>>>>> 2e76926062f9e3121577c8ffe6c5906383b77375
 tasks.withType(JavaCompile) {
     // $javac -encoding UTF-8 ...
     options.encoding = 'UTF-8';
 }
 
-<<<<<<< HEAD
 //eclipse 프로젝트 이름을 설정하기
-=======
 // 'eclipse' 플러그인의 .project 파일 생성 작업을 제어
 // => eclipse 프로젝트 이름을 설정하기
->>>>>>> 2e76926062f9e3121577c8ffe6c5906383b77375
 eclipse {
     project {
         name = "java-basic"
