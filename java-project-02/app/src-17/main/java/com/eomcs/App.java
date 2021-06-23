@@ -19,7 +19,10 @@ import java.util.Scanner;
 //14. 게시글 삭제하기
 //15. 메서드 문법을 이용하여 기능 별로 명령어를 묶어 관리하기
 //16. 클래스를 이용하여 새 데이터타입을 정의하기
+//17. 클래스를 이용하여 메서드를 분류하기 
 public class App {
+
+  // 한 개의 게시글을 담을 복합 데이터의 변수를 설계
   static class Board {
     String title;
     String content;
@@ -32,12 +35,10 @@ public class App {
 
   public static void main(String[] args) {
 
+    // App 클래스에서 만든 Scanner 인스턴스를 BoardHandler 와 같이 쓴다.
     BoardHandler.keyScan = keyScan;
 
-
     System.out.println("[게시판 관리]");
-
-
 
     loop: while (true) {
       System.out.print("명령> ");
@@ -52,15 +53,17 @@ public class App {
         case "quit":
           break loop;
         default:
-          System.out.println("지원하지 않는 명령어입니다.");
-
+          System.out.println("지원하지 않는 명령입니다.");
       }
     }
 
     keyScan.close();
 
-    System.out.println("안녕히가세요!");
+    System.out.println("안녕히 가세요!");
   }
+
+
+
 
 
 }
