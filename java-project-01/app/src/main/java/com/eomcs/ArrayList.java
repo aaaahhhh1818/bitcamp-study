@@ -1,14 +1,12 @@
 package com.eomcs;
 
-import com.eomcs.App.Board;
-
 public class ArrayList {
 
   static final int MAX_LENGTH = 100;
   static Object[] list = new Object[MAX_LENGTH];
   static int size = 0;
 
-  static void append(Board obj) {
+  static void append(Object obj) {
     list[size++] = obj;
   }
 
