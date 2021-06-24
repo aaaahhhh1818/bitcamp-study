@@ -43,7 +43,7 @@ public class MemberHandler implements Handler {
   static void add() {
     System.out.println("[회원 등록]");
 
-    if (ArrayList.size == ArrayList.MAX_LENGTH) {
+    if (ArrayList2.size == ArrayList2.MAX_LENGTH) {
       System.out.println("더 이상 회원을 추가할 수 없습니다.");
       return;
     }
@@ -71,7 +71,7 @@ public class MemberHandler implements Handler {
     member.registeredDate = new Date(); // 현재 날짜와 시간을 생성하여 배열에 저장
 
     // 배열에 게시글 정보가 담긴 객체(식판)을 넣는다
-    ArrayList.append(member);
+    ArrayList2.append(member);
 
     System.out.println("회원을 등록했습니다.");
 
@@ -80,7 +80,7 @@ public class MemberHandler implements Handler {
   static void list() {
     System.out.println("[회원 목록]");
 
-    Object[] arr = ArrayList.toArray();
+    Object[] arr = ArrayList2.toArray();
 
     for(int i = 0; i < arr.length; i++) { //배열을 처음부터 끝까지 반복할 때 유용
       Member member = (Member) arr[i];
@@ -97,12 +97,12 @@ public class MemberHandler implements Handler {
     System.out.print("번호? ");
     int index = Integer.parseInt(keyScan.nextLine());
 
-    if (index < 0 || index >= ArrayList.size) {
+    if (index < 0 || index >= ArrayList2.size) {
       System.out.println("무효한 회원 번호입니다.");
       return;
     }
 
-    Member member = (Member) ArrayList.retrieve(index);
+    Member member = (Member) ArrayList2.retrieve(index);
 
     System.out.printf("제목: %s\n", member.name);
     System.out.printf("이메일: %s\n", member.email);
@@ -116,12 +116,12 @@ public class MemberHandler implements Handler {
     System.out.print("번호? ");
     int index = Integer.parseInt(keyScan.nextLine());
 
-    if (index < 0 || index >= ArrayList.size) {
+    if (index < 0 || index >= ArrayList2.size) {
       System.out.println("무효한 회원 번호입니다.");
       return;
     }
 
-    Member member = (Member) ArrayList.retrieve(index);
+    Member member = (Member) ArrayList2.retrieve(index);
 
     System.out.printf("이름(%s)? ", member.name);
     String name = keyScan.nextLine();
@@ -159,7 +159,7 @@ public class MemberHandler implements Handler {
     System.out.print("번호? ");
     int index = Integer.parseInt(keyScan.nextLine());
 
-    if (index < 0 || index >= ArrayList.size) {
+    if (index < 0 || index >= ArrayList2.size) {
       System.out.println("무효한 회원 번호입니다.");
       return;
     }
@@ -170,7 +170,7 @@ public class MemberHandler implements Handler {
       return;
     }
 
-    ArrayList.remove(index);
+    ArrayList2.remove(index);
 
     System.out.println("회원을 삭제하였습니다.");
   }
