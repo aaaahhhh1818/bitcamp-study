@@ -41,7 +41,6 @@ public class BoardHandler implements Handler {
       //int index = 0; // 반복문이 반복된다고 계속 생성되지 않음
       // while문이 끝난 뒤에는 해당 변수를 사용할 수 없음
       // (반복문 안에 넣어 제약조건을 걸어주는 것이 낫다!)
-
       switch (command) {
         case "list": this.list(); break;
         case "add": this.add(); break;

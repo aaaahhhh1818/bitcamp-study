@@ -17,7 +17,6 @@ public class Test3 {
     Calculator3 obj1 = new Calculator3();
     Calculator3 obj2 = new Calculator3();
 
-
     // 인스턴스 메서드를 호출할 때는
     // 반드시 앞에 준 인스턴스 주소를 제공해야 한다.
     // 그 인스턴스 주소는 메서드에 내장된 this라는 변수에 전달된다.
