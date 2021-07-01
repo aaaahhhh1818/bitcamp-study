@@ -3,9 +3,9 @@ package net.hb.day0628;
 import java.util.Scanner;
 
 public class Work05Hotel {
-  private int floor=3; //층=행 3층
-  private int room=5; //호=열 5호  3층*5열=15방구성
-  private String[][] name = new String[floor][room];
+  private int floor; //층=행 3층
+  private int room; //호=열 5호  3층*5열=15방구성
+  private String[][] name = new String[3][5];
   private String title;
 
   //  public Work05Hotel() {}
@@ -40,8 +40,6 @@ public class Work05Hotel {
 
   public void checkIn() {
 
-    String name[][] = null;
-
     System.out.print("몇 층에서 투숙하시겠습니까?(1~3층까지)>>> ");
     floor = Integer.parseInt(sc.nextLine());
     if(floor <1  || floor >3) {
@@ -56,32 +54,35 @@ public class Work05Hotel {
       return;
     }
 
-    System.out.print("이름을 입력하세요>>> ");
-    name[floor-1][room-1] = sc.nextLine();
+    if(name[floor-1][room-1] == null) {
+      System.out.print("이름을 입력하세요>>> ");
+      name[floor-1][room-1] = sc.nextLine();
 
-    //    if(name != null) {
-    //      System.out.println("객실을 예약할 수 없습니다");
-    //    }else {
-    //      System.out.println("객실 예약 성공");
-    //      return;
-    //    }
-
+      System.out.println("객실 예약 완료");
+    }else {
+      System.out.println("이미 예약된 객실입니다");
+      return;
+    }
   }//checkIn end
 
   public void checkOut() {
-    //    System.out.println("이름을 입력해주세요>>> ");
-    //    String name = sc.nextLine();
-    //
-    //    if(name != null) {
-    //      System.out.println("객실 예약 성공");
-    //    }else {
-    //      System.out.println("객실을 예약할 수 없습니다");
-    //      return;
-    //    }
-  }//end
+    System.out.print("퇴실할 층?>>> ");
+    floor = Integer.parseInt(sc.nextLine());
+
+    System.out.print("퇴실할 호수?>>> ");
+    room = Integer.parseInt(sc.nextLine());
+
+    if(name[floor-1][room-1] != null) {
+      name[floor-1][room-1] = null;
+      System.out.println("퇴실 완료");
+    }else {
+      System.out.println("이미 퇴실 처리된 객실입니다");
+      return;
+    }
+  }//check end
 
   public void map() { //printAll()=list()=display()
-    System.out.println("\n\t[ "+ title +" 투숙상태 ]" );
+    System.out.println("\n\t[ 투숙상태 ]" );
     for(int i = 0; i < 3; i++) {
       for(int b = 0; b < 5; b++) {
         System.out.print((i+1)+"0"+(b+1)+"\t");

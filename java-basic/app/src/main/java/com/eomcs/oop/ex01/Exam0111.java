@@ -12,7 +12,7 @@ public class Exam0111 {
     float aver;
 
     name = "홍길동";
-    kor = 100;
+    kor = 100;i
     eng = 90;
     math = 85;
 
