@@ -1,0 +1,71 @@
+21-07-01 (목)
+
+1. interface GuestImp { 3개 메소드 }
+2. class Guest 상속 guestImp { 재정의 = 오버라이딩 }
+3. class GuestDTO{}
+   게시판 = 방명록 = 회원가입
+   게시판에 글올리기
+      ㄴ 글쓴이, 제목, 비번, 날짜, 조회수, 핸드폰, 메일, 포인트
+
+  class 클래스 {
+    public void boardWrite(1,2,3,4,5,6,7,8) { }
+    public void boardWrite(GuestDTO dto) { }
+    public GuestDTO boardDetail(int num) { ...return dto; } 
+  }
+
+* 자바에서 interface 생성
+1) class키워드 대신 interface기술
+2) 메소드선언만 = 추상메소드
+3) 추상키워드 abstract기술
+4) interface상속 키워드 implements
+5) 상속받은 클래스 에서 반드시 재정의 = @override (생략가능)
+6) interface상속기술은 다중상속 기술
+
+interface AAA { public abstract void apple(); }
+interface BBB { public void blue(); }
+interface CCC { public void cherry(); }
+class LG { public int blue() { }
+class LA { public int cherry() { la산체리 }
+
+class Test implements AAA, BBB, CCC {
+  @Override public void apple() { }
+  @Override public void blue() { }
+  @Override public void cherry() { }
+}
+
+인터페이스
+ ㄴ 인터페이스가 인터페이스 상속
+ ㄴ 인터페이스의 메소드중에 default 키워드 사용하면 몸체 { }
+ ㄴ 인터페이스의 필드에 static키워드 사용
+ ㄴ 클래스에서 인터페이스 상속
+
+인터페이스 우리가 생성하지 않고 자바api에서 제공되는 인터페이스 접근
+
+우리가 만든 인터페이스 뺴고=제외 api제공
+인터페이스 상속받으면 무조건 재정의
+java.awt패키지
+ Frame클래스 상속
+ Button클래스, TextField클래스, TextArea클래스
+
+java.awt.event패키지
+      |- interface WindowListener윈도우이벤트 7개 메소드 => 인터페이스
+      |- interface ActionListener버튼클릭, 이미지클릭
+      |- interface KeyListener방향키 key이벤트, 마우스이벤트
+      
+-------------------------------------------------------------------------
+21-07-02 (금)
+ |- Frame상속, ActionListener인터페이스, WinfowListener인터페이스
+ |- interface특징, 상속
+ |- class 상속
+ |- Work05Hotel.java
+     ㄴ상속X, 인터페이스X, 재정의X, 메소드중복X
+     ㄴ메소드 
+
+
+
+
+
+
+
+
+
