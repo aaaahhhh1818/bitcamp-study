@@ -5,4 +5,8 @@ public  class Father {
     return 78;
   }//end
 
+
+  public void car() {
+    System.out.println("Father클래스 car메소드");
+  }//end
 }//Father class

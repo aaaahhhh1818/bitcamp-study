@@ -76,7 +76,7 @@ public class Work05Hotel {
       name[floor-1][room-1] = null;
       System.out.println("퇴실 완료");
     }else {
-      System.out.println("이미 퇴실 처리된 객실입니다");
+      System.out.println("빈 방입니다");
       return;
     }
   }//check end
@@ -102,7 +102,17 @@ public class Work05Hotel {
   }//map end
 
   public void list() { //영림쌤 구현해서 보여드리겠습니다 
-
+    System.out.println("\n\t[ list ]");
+    for(int i = 0; i < 3; i++){
+      for(int j = 0; j < 5; j++){
+        if(name[i][j] == null) {
+          System.out.print( " " + (i+1)+"0"+(j+1) +"호"+"□\t" +"\t"); 
+        }else {
+          System.out.print( " " + (i+1)+"0"+(j+1) +"호"+"■\t" + name[i][j] + "\t"); 
+        }
+      } //j end
+      System.out.println();
+    }//for i end
   }//end
 
   public static void main(String[] args) {
