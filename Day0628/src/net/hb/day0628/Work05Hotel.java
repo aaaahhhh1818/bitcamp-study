@@ -6,7 +6,7 @@ public class Work05Hotel {
   private int floor; //층=행 3층
   private int room; //호=열 5호  3층*5열=15방구성
   private String[][] name = new String[3][5];
-  private String title;
+  //  private String title;
 
   //  public Work05Hotel() {}
   //  public Work05Hotel(String name) {}
@@ -119,4 +119,5 @@ public class Work05Hotel {
     Work05Hotel wh = new Work05Hotel();
     wh.process();
   }//end
+
 }//class END
