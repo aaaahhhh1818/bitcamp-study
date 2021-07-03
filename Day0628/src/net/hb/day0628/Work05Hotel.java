@@ -119,5 +119,4 @@ public class Work05Hotel {
     Work05Hotel wh = new Work05Hotel();
     wh.process();
   }//end
-
 }//class END
