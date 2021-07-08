@@ -1,14 +1,74 @@
 package net.bit.day0707;
 
-public class Board {
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
 
-  public static void main(String[] args) {
-    //1Î≤àÏß∏ Ïò§ÎùºÌÅ¥ dbÎìúÎùºÏù¥Î≤Ñ Î°úÎìúÌïòÎäî Î™ÖÎ†πÏñ¥ Class.forName(" ")
-    //2Î≤àÏß∏ dbÏÑúÎ≤ÑÏ†ëÍ∑º Í≥ÑÏ†ïÎ™Ö, pwd 127.0.0.1:152:XE system 1234
-    //3Î≤àÏß∏ Î™ÖÎ†πÏñ¥ÏÉùÏÑ±ÏùÄ 2Î≤àÏû¨ ÏÑúÎ≤ÑÏ†ïÎ≥¥Î•º Ï∞∏Ï°∞Ìï¥ÏÑú Î™ÖÎ†πÏñ¥ ÏÉùÏÑ± Statement ST
+public class Board { //test≈◊¿Ã∫Ì
+	Connection CN=null; //DBº≠πˆø¨∞·¡§∫∏ º≠πˆip¡÷º“ ∞Ë¡§id,pwd
+	Statement ST=null;  //ST=CN.createStatement()∏Ì∑…æÓª˝º∫ ªË¡¶,Ω≈±‘µÓ∑œ,¡∂»∏«œ∂Û
+	ResultSet RS=null;  //select¡∂»∏∞·∞˙∞™ ¿¸√ºµ•¿Ã≈Õ∏¶ ±‚æÔ«’¥œ¥Ÿ
+	String msg="";
+	int Gtotal = 0;  
+	Scanner sc = new Scanner(System.in);
+	
+	public void dbConnect() {
+	 try {
+	  Class.forName("oracle.jdbc.driver.OracleDriver"); //ø¿∂Û≈¨µÂ∂Û¿Ã∫Í∑ŒµÂ
+	  CN=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","system","1234");
+	  System.out.println("ø¿∂Û≈¨ µÂ∂Û¿Ã∫Íπ◊ º≠πˆø¨∞·º∫∞¯ ");	 
+	  ST = CN.createStatement(); //π›µÂΩ√« ºˆ 
+	 }catch(Exception ex){System.out.println("error =" + ex);}
+	}//end
+	
+	public void dbInsert() {
+	 try {
+			 
+	 }catch(Exception ex) { }	
+	}//end
+	
+	public void dbSelectAll() {
+	 try {
+		ST = CN.createStatement();
+		msg ="select  * from  test "; //πÆ¿⁄ø≠¿ª ∏Ì∑…æÓ√≥∏Æ 
+		ResultSet rs = ST.executeQuery(msg);
+		while(rs.next()==true) {
+			int a = rs.getInt("code");
+			String b = rs.getString("name");
+			String c = rs.getString("title");
+			System.out.println(a+"\t"+b+"\t" +c);
+		}
+		rs.close();
+	 }catch(Exception ex) { }	
+	}//end
+	
+	public void dbDelete() {
+	 try {
+		 System.out.print("ªË¡¶«“ ¿Ã∏ß ¿‘∑¬>>>");
+		 String del = sc.nextLine();
+		 msg ="delete from test where name = '" + del +"'" ;
+		 System.out.println(msg);
+		 int OK = ST.executeUpdate(msg);
+		 if (OK>0){
+		  System.out.println(del+"µ•¿Ã≈Õ ªË¡¶ º∫∞¯");	 
+		 }else {System.out.println(del+"µ•¿Ã≈Õ ªË¡¶ Ω«∆–");}
+	  }catch(Exception ex) { }		
+	}//end
+	
+	public static void main(String[] args) {
+	  try {	
+		Board bbs = new Board();
+		bbs.dbConnect();
+		bbs.dbSelectAll();
+	  }catch(Exception ex){ }
+	}//end
+}//Board class END
 
 
-    String msg = "select * from test";
-  }
 
-}
+
+
+
+
