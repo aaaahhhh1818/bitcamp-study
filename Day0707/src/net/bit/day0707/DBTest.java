@@ -1,5 +1,6 @@
 package net.bit.day0707;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,35 +8,59 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class DBTest {
-
-  public static void main(String[] args) {
-    Connection CN = null;
-    Statement ST = null;
-    ResultSet RS = null;
-    String msg = "isud=crudì¿¼ë¦¬ë¬¸ê¸°ìˆ ";
-    Scanner sc = new Scanner(System.in);
-
-    try {
-      Class.forName("oracle.jdbc,driver.OracleDriver");
-      String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE" ;
-      CN = DriverManager.getConnection(url, "system", "1234"); 
-      System.out.println("ì˜¤ë¼í´ ë“œë¼ì´ë¸Œ ë° ì„œë²„ì—°ê²° ì„±ê³µ");
-
-      //ì²«ë²ˆì§¸ëª…ë ¹ì–´ìƒì„±
-      ST = CN.createStatement();
-
-      //í‚¤ë³´ë“œì—ì„œ ë°ì´í„° ì…ë ¥
-
-      //      System.out.print("\nì½”ë“œeì…ë ¥(4ìë¦¿ìˆ˜)>>>");
-      //      int a = Integer.parseInt(sc.nextLine());
-      //      System.out.print("ì´ë¦„ì…ë ¥>>>");
-      //      String b = sc.nextLine();
-      //      System.out.print("ì œëª©ì…ë ¥>>>");
-      //      String c = sc.nextLine();    
-    }catch(Exception ex) { System.out.println("ì—ëŸ¬ì´ìœ " + ex); }
-    sc.close();
-
-  }//main end
-
-  //ì‹ ê·œë“±ë¡, ì „ì²´ì¶œë ¥ì„±ê³µ í›„ ë©”ì†Œë“œ ìƒì„±í•´ì„œ ìµœëŒ€í•œ ë©”ì†Œë“œ í™œìš©
+	public static void main(String[] args) {
+		Connection CN=null; //DB¼­¹ö¿¬°áÁ¤º¸ ¼­¹öipÁÖ¼Ò °èÁ¤id,pwd
+		Statement ST=null;  //ST=CN.createStatement()¸í·É¾î»ı¼º »èÁ¦,½Å±Ôµî·Ï,Á¶È¸ÇÏ¶ó
+		ResultSet RS=null;  //selectÁ¶È¸°á°ú°ª ÀüÃ¼µ¥ÀÌÅÍ¸¦ ±â¾ïÇÕ´Ï´Ù
+		String msg="isud=crudÄõ¸®¹®±â¼ú";
+		int Gtotal = 0;  
+		Scanner sc = new Scanner(System.in);
+		
+	 try {	
+		 Class.forName("oracle.jdbc.driver.OracleDriver"); //¿À¶óÅ¬µå¶óÀÌºê·Îµå
+		 String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE" ;
+		 CN=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","system","1234");
+		 //System.out.println("¿À¶óÅ¬ µå¶óÀÌºê¹× ¼­¹ö¿¬°á¼º°ø ");
+		 
+		//Ã¹¹øÂ°¸í·É¾î»ı¼º
+		 ST = CN.createStatement();
+	    /////////////////////////////////////////////////////////////////
+	    msg ="select count(*) as hit  from test ";
+	    RS = ST.executeQuery(msg);
+	    if( RS.next()==true) { Gtotal = RS.getInt("hit"); }
+	    /////////////////////////////////////////////////////////////////
+	    
+	    System.out.println("ÇÁ·Î±×·¥ ÀüÃ¼µ¥ÀÌÅÍ ÀĞ¾î¿À´ÂÁßÀÔ´Ï´Ù");
+	    Thread.sleep(1000);
+	    msg = "select * from  test " ; //¹®ÀÚ¿­À» ¸í·É¾î ÀÎ½ÄÇØ¼­ ½ÇÇàÇÏµµ·Ï Statement
+	    RS = ST.executeQuery(msg);
+	    
+	    System.out.println("------------- µ¥ÀÌÅÍ Ãâ·Â ----------------");
+	    System.out.println("\t\t\t    ÀüÃ¼·¹ÄÚµå°¹¼ö:" + Gtotal);
+	    System.out.println("ÄÚ µå\tÀÌ ¸§\tÁ¦ ¸ñ\t³¯ Â¥\t   Á¶È¸¼ö");
+	   while(RS.next()==true) {
+	    	//ÇÊµåÁ¢±ÙÇØ¼­ µ¥ÀÌÅÍ°¡Á®¿Ã¶§ getXXX()
+	    	int ucode = RS.getInt("code");
+	    	String uname = RS.getString("name");
+	    	java.util.Date udt = RS.getDate("wdate");
+	    	String utitle = RS.getString("title");
+	    	int ucnt = RS.getInt("cnt");
+	    	System.out.println(ucode +"\t" + uname+"\t" + utitle+"\t" + udt+"\t" + ucnt);
+	    }
+	 }catch(Exception ex) { System.out.println("¿¡·¯ÀÌÀ¯ " + ex);}	
+	 sc.close();
+	}//main end
+	
+	//½Å±Ôµî·Ï,ÀüÃ¼Ãâ·Â¼º°øÈÄ ¸Ş¼Òµå»ı¼ºÇØ¼­ ÃÖ´ëÇÑ ¸Ş¼ÒµåÈ°¿ë 	
+	//º»ÀÎÀÛ¼ºÇÑ ÄÚµå´Â º¹»çÈÄ ºÙ¿©³Ö±â ÁÖ¼®Ã³¸® 
+	
 }//class END
+ 
+
+
+
+
+
+
+
+
