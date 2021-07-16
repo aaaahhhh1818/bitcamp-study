@@ -134,7 +134,7 @@ public class SubFuntion extends Cal_connect {
           + "Caldate = TO_DATE('" + setDate + "','yyyy-MM-dd')"
           +" where Calnumber = " + tempnum ;
 
-      System.out.println(msg);
+      //System.out.println(msg);
 
       int OK = ST.executeUpdate(msg);
       if (OK>0) {

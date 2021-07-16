@@ -2,6 +2,8 @@ package com.lang.cal;
 
 public class MainCalender extends CalFuntion{
 
+  Cal_connect cn = new Cal_connect();
+
   static char[] weeks = {'일', '월', '화', '수', '목', '금', '토'};
   static int [][] days = {{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}, // 평년
       { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}}; // 윤년
@@ -28,6 +30,9 @@ public class MainCalender extends CalFuntion{
   }//e
 
   public void Show_Calender(int year, int month) throws Exception {
+
+    connect(); 
+
     int yridx = isLeap(year);
     int lastday = days[yridx][month - 1];
     int Firstweek = fristDayWeek(year,month);
@@ -49,9 +54,11 @@ public class MainCalender extends CalFuntion{
     }
 
     for(int i = 1; i<= lastday; i++) {
-      if(arr[year-1900][month][i-1] == null) {
-        System.out.printf("%2d \t", i);
-      } else {System.out.printf("%2d ●\t", i);}
+      msg = "select caldate from cal where caldate = "+ "'"+ year +"-"+ month +"-"+ i + "'" ;
+      RS = ST.executeQuery(msg);
+      if(RS.next()==true) {
+        System.out.printf("%2d ●\t", i);
+      } else {System.out.printf("%2d \t", i);}
       if((Firstweek + i -1) % 7 == 6)
         System.out.println();
     }//달력구현

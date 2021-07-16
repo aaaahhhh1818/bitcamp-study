@@ -29,9 +29,21 @@ public class Cal_connect {
       Class.forName("oracle.jdbc.driver.OracleDriver");
       String url = "jdbc:oracle:thin:@localhost:1521:XE";
       CN =  DriverManager.getConnection(url, "system", "1234");
-      //System.out.println( DT + "드라이브 & 서버 연결성공");
+      System.out.println( DT + "드라이브 & 서버 연결성공");
 
       ST = CN.createStatement();
+
+      msg = "select count(*) as hit from cal";
+      RS = ST.executeQuery(msg);
+      if(RS.next()==true)  {
+        total = RS.getInt("hit");
+      }
+      //    Class.forName("oracle.jdbc.driver.OracleDriver");
+      //    String url = "jdbc:oracle:thin:@175.210.92.176:1521:XE";
+      //    CN =  DriverManager.getConnection(url, "hhwanseung", "1234");
+      //    System.out.println( DT + "드라이브 & 서버 연결성공");
+      //    
+      //    ST = CN.createStatement();
 
       msg = "select count(*) as hit from cal";
       RS = ST.executeQuery(msg);

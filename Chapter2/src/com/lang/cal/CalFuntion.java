@@ -73,7 +73,7 @@ public class CalFuntion extends SubFuntion {
 
 
     int OK = PST.executeUpdate();
-    System.out.println(msg);
+    //System.out.println(msg);
     if (OK>0) {
       System.out.println(dDate + "일정 저장 성공");
     } else {
