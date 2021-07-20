@@ -1,4 +1,4 @@
-drop table sosi;
+
 create table sosi (
   id number(4) not null primary key,
   name varchar2(20),

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
+<<<<<<< HEAD
 public class Board { //testí…Œì´ë¸”
   Connection CN=null; //DBì„œë²„ì—°ê²°ì •ë³´ ì„œë²„ipì£¼ì†Œ ê³„ì •id,pwd
   Statement ST=null;  //ST=CN.createStatement()ëª…ë ¹ì–´ìƒì„± ì‚­ì œ,ì‹ ê·œë“±ë¡,ì¡°íšŒí•˜ë¼
@@ -88,3 +89,71 @@ public class Board { //testí…Œì´ë¸”
     }catch(Exception ex){ }
   }//end
 }//Board class END
+=======
+public class Board { //testÅ×ÀÌºí
+	Connection CN=null; //DB¼­¹ö¿¬°áÁ¤º¸ ¼­¹öipÁÖ¼Ò °èÁ¤id,pwd
+	Statement ST=null;  //ST=CN.createStatement()¸í·É¾î»ý¼º »èÁ¦,½Å±Ôµî·Ï,Á¶È¸ÇÏ¶ó
+	ResultSet RS=null;  //selectÁ¶È¸°á°ú°ª ÀüÃ¼µ¥ÀÌÅÍ¸¦ ±â¾ïÇÕ´Ï´Ù
+	String msg="";
+	int Gtotal = 0;  
+	Scanner sc = new Scanner(System.in);
+	
+	public void dbConnect() {
+	 try {
+	  Class.forName("oracle.jdbc.driver.OracleDriver"); //¿À¶óÅ¬µå¶óÀÌºê·Îµå
+	  CN=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","system","1234");
+	  System.out.println("¿À¶óÅ¬ µå¶óÀÌºê¹× ¼­¹ö¿¬°á¼º°ø ");	 
+	  ST = CN.createStatement(); //¹Ýµå½ÃÇÊ¼ö 
+	 }catch(Exception ex){System.out.println("error =" + ex);}
+	}//end
+	
+	public void dbInsert() {
+	 try {
+			 
+	 }catch(Exception ex) { }	
+	}//end
+	
+	public void dbSelectAll() {
+	 try {
+		ST = CN.createStatement();
+		msg ="select  * from  test "; //¹®ÀÚ¿­À» ¸í·É¾îÃ³¸® 
+		ResultSet rs = ST.executeQuery(msg);
+		while(rs.next()==true) {
+			int a = rs.getInt("code");
+			String b = rs.getString("name");
+			String c = rs.getString("title");
+			System.out.println(a+"\t"+b+"\t" +c);
+		}
+		rs.close();
+	 }catch(Exception ex) { }	
+	}//end
+	
+	public void dbDelete() {
+	 try {
+		 System.out.print("»èÁ¦ÇÒ ÀÌ¸§ ÀÔ·Â>>>");
+		 String del = sc.nextLine();
+		 msg ="delete from test where name = '" + del +"'" ;
+		 System.out.println(msg);
+		 int OK = ST.executeUpdate(msg);
+		 if (OK>0){
+		  System.out.println(del+"µ¥ÀÌÅÍ »èÁ¦ ¼º°ø");	 
+		 }else {System.out.println(del+"µ¥ÀÌÅÍ »èÁ¦ ½ÇÆÐ");}
+	  }catch(Exception ex) { }		
+	}//end
+	
+	public static void main(String[] args) {
+	  try {	
+		Board bbs = new Board();
+		bbs.dbConnect();
+		bbs.dbSelectAll();
+	  }catch(Exception ex){ }
+	}//end
+}//Board class END
+
+
+
+
+
+
+
+>>>>>>> 507a6b8618964bc69b0504184be8227b11b644ae
