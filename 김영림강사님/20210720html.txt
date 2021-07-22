@@ -20,3 +20,55 @@ UI 화면 = form = frame = 폼
 파일전송통신프로토콜 ftp
 메일전송통신프로토콜 smtp
 TV통신프로토콜 UDP
+
+웹브라우저에서 인식하는 html언어
+웹브라우저에서 인식하는 html언어는 태그 = tag 구성이 됨 <> <>
+웹브라우저에서 인식하는 html언어의 단점은 자동라인개행 안됨
+웹브라우저에서 인식하는 html언어 enter기능=라인개행 하는 태그 <br>엔터1번 <p>엔터2번
+  <html>
+    <head> <title></title> </head>
+    <body>
+      <img src="폴더이름/파일명.png"> </img>
+      <h2> 두번째큰제목 </h2>
+      <imge source="폴더이름/파일명.png"> </image>
+      <header2> 두번째큰제목 </header2>
+    </body>
+  </html>
+
+
+VScode프로그램 실행 후
+왼쪽 5번 아이콘 확장
+  live server 입력 후 install
+
+html태그는 대소문자 구별이 없음
+html태그는 쌍태그 <h2><
+
+
+html 마크업
+- Hyper Text Markup Language
+- 웹문서를 작성하기 위해 사용되는 언어
+- Http프로토콜 사용
+- 한 쌍의 태그(tag)명령으로 이루어짐
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
