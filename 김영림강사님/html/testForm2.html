@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 화면2 </title>
+    <style>
+        * {
+            font-size: 16pt;
+            font-family: 'comic sans ms', Courier, monospace;
+        }
+
+        a {
+            font-size: 26pt;
+            text-decoration: none;
+            color: blue;
+        }
+
+        a:hover {
+            font-size: 36pt;
+            text-decoration: none;
+            color: green;
+            font-family: 'comic sans ms';
+        }
+    </style>
+    <script>
+        function nullCheck() {
+            /*document는 생략이 가능하다*/
+            a = document.myForm.code.value;
+            if (a == "" || a == null) {
+                alert("코드 데이터를 입력하세요.(필수항목)");
+                myForm.code.focus();
+                return; /*아래문장을 처리안하고 함수 탈출*/
+
+            } else {
+                b = document.myForm.title.value;
+                if (b == "" || b == null) {
+                    alert("제목을 입력하세요(필수항목)");
+                    myForm.title.focus();
+                } else {}
+            }
+
+            size = document.myForm.code.value.length;
+            if (size > 6) {
+                alert("6자리까지 입력가능합니다.");
+                return;
+            } else {}
+        }
+    </script>
+</head>
+
+<body>
+    <font color='blue'><b> 화면만들기 </b></font> <br>
+    <form name="myform">
+        코드: <input type="text" name="code" size="10">
+        제목: <input type="text" name="title" size="10" value="summer">
+        <input type="button" value="저 장" onclick="nullCheck();">
+        <input type="reset" value="취 소">
+    </form>
+
+
+</body>
+
+</html>
