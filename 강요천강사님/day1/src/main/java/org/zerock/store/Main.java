@@ -1,5 +1,7 @@
 package org.zerock.store;
 
+import org.zerock.store.ui.FindMenuUI;
+
 import java.util.Scanner;
 
 public class Main {
@@ -16,9 +18,13 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        StoreUI storeUI = new StoreUI(scanner, service);
+        //StoreUI storeUI = new StoreUI(scanner, service);
 
-        storeUI.fnMenu();
+        //storeUI.fnMenu();
+
+        FindMenuUI ui = new FindMenuUI(scanner, service);
+
+        ui.doJob();
 
     }
 }
