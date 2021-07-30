@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{font-size:14pt;}
+    </style>
+
+    <script>
+        function welcome(){
+            //alert('저희홈페이지 방문을 환영합니다');
+            console.log('냥이씨 방문을 환영합니다');
+            console.log('결과 = ' + (1200*2));
+        }//end
+
+        function pinkChange(){
+            target = document.querySelector('body');
+            target.style.backgroundColor='pink'
+        }
+
+        function whiteChange(){
+            target = document.querySelector('body');
+            target.style.backgroundColor='white'
+        }
+    </script>
+</head>
+<body onload="welcome();">
+    <p></p><br>
+    eventTest19.html <p></p>
+    <table border="1" width="1200" cellspacing="0">
+        <tr bgcolor="yellow">  
+            <th>강의시간</th> 
+            <th>강의과목</th>
+            <th>담당강사</th>
+            <th>강의실</th>
+            <th>기타비고</th>
+        </tr>
+        <tr onmouseover="style.backgroundColor='#00FFFF' "   onmouseout="style.backgroundColor=''">
+            <td>오전12:00</td>
+            <td>jQuery</td>
+            <td>이순신</td>
+            <td>서초506</td>
+            <td>비대면 웹엑스사용</td>
+        </tr>
+        <tr onmouseover="style.backgroundColor='#00FFFF' "   onmouseout="style.backgroundColor=''" >
+            <td>오전12:00</td>
+            <td>java</td>
+            <td>엄진영</td>
+            <td>신촌202</td>
+            <td>비대면 웹엑스사용</td>
+        </tr>
+        <tr onmouseover="this.style.backgroundColor='#00FFFF' "   onmouseout="this.style.backgroundColor=''">
+            <td>오전12:00</td>
+            <td>SQL튜닝</td>
+            <td>홍길동</td>
+            <td>서초102</td>
+            <td>비대면 웹엑스사용</td>
+        </tr>
+    </table>
+    <p></p>
+    <!-- 태그 style기술할때 this키워드생략가능 -->
+    <button style="font-size:24pt;"  onclick="this.style.backgroundColor='#00FFFF'">옥색칼라변경</button>
+    <button style="font-size:24pt;"  onclick="whiteChange();">light바탕색칼라변경</button>
+</body>
+</html>
