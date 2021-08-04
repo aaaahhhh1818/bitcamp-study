@@ -1,0 +1,1 @@
+{"oper":"ADD","noteDTO":{"who":"A","whom":"B","content":"커피한잔?"}}
