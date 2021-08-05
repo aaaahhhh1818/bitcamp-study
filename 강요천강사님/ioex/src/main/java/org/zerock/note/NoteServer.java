@@ -11,12 +11,13 @@ public class NoteServer {
     //bad code
     public static void main(String[] args) throws Exception {
 
+        NoteService service = new NoteService();
+
         //serversocket
         ServerSocket serverSocket = new ServerSocket(9999);
-        System.out.println("Ready...");
-
+        System.out.println("ready...");
         //loop
-        while (true) {
+        while(true){
 
             Socket socket = serverSocket.accept();
             DataInputStream dataInputStream =
@@ -29,6 +30,16 @@ public class NoteServer {
 
             System.out.println(command);
 
+            String oper = command.getOper();
+
+            if (oper.equalsIgnoreCase("ADD")){
+                service.add(command.getNoteDTO());
+            }else if(oper.equalsIgnoreCase("READ")){
+                String owner = command.getNoteDTO().getWhom();
+                System.out.println(service.getList(owner));
+            }
+
+
         }
 
         //socket
@@ -37,8 +48,7 @@ public class NoteServer {
 
         //Gson => 문자열을 Command 객체
 
-        //Command 객체의 oper 값이 ADD면 service.add()
+        //Command객체의 oper 값이 ADD 면 service.add( )
 
     }
-
 }
