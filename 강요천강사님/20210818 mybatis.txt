@@ -1,0 +1,56 @@
+# ORM(Object Relational Mapping)
+-> 객체-관계 맵핑.
+-> language는 상관x, 맵핑해주면 orm
+
+# Frame Work
+-> 뼈대
+
+# Platform -> 얘가 없으면 아무것도 못하는 애들
+  FrameWork -> 기능 추가??
+
+# 마이바티스 사용
+
+https://mybatis.org/mybatis-3/ko/getting-started.html
+
+DB 설계 요령
+필터 / 리스너
+모델2 -> 프론트 컨트롤러 /
+파일업로드 -> 섬네일 처리/파일다운로드
+댓글 -> Ajax
+Lombok
+MySQL 드라이버
+Lodg4j2 설정
+JSTL
+
+config.xml 파일 로딩 -> 매퍼파일 -> sql
+ㄴDB설정
+
+-------------------------------------
+
+select * from board where bno > 0 order by bno desc limit #{skip}, #{skip}
+
+-> 자바에서 skip만 변수로 뽑아서 쓰면됨??
+
+
+----------
+
+/board/list => 1페이지 10개
+
+밑에 페이지 번호 1부터 10까지 출력 다음버튼 존재
+
+/board/list?page=13
+
+이전 11,12,13,...,20 다음
+
+데이터 개수 123개인 경우
+
+11페이지
+
+이전 11, 12, 13
+-----------------------------
+
+list에 파라미터 (page나 size)
+
+
+
+# RuntimeException -> 예외나와도 진행시키기

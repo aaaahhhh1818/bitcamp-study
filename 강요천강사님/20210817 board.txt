@@ -1,0 +1,64 @@
+# 세션 / 쿠키
+
+# if each문
+
+# listController에서 로그인 정보 있는지 체크 해줘야함
+
+-> memberobj가 널이면??
+cookie는 있는데 memberobj가 없음
+mid를 사용해서 정보를 가져옴!
+
+---------------------------------------
+사용자가 쿠키가 있는데 쿠키의 id는 login -> 로그인을 한 적이 있는 사용자(일주일 안에)
+
+만약 새로 로그인한 사용자라면 -> 세션에 정보 저장
+-> memeberobj에 정보 저장하고 갖고 온다.
+
+
+case1 : session X, cookie X
+세션에서 memberobj를 가져옴 -> 근데 없음 팅겨냄
+
+case2 : session O, cookie X
+memberobj 정보 있음 -> memberobj생성
+
+case3 : session X, cookie O
+쿠키가 있다면 루프도. 유저값 getValue 가져옴
+
+case4 : session O, cookie O
+회원정보 가져오는데 문제 X
+----------------------------------------
+
+게시판 만들기
+
+step1. 로그인 X, 페이징 X -> step2. 로그인 O, 페이징X
+ㄴ등록/수정/삭제/조회/목록
+
+-> 와이어프레임 구성 (그림)
+-> URL분석/설계 (엑셀)
+->순서 1. DB> DAO 설계
+       2. 화면 처리?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
