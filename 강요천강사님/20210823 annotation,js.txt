@@ -1,0 +1,52 @@
+# File api
+
+# java file get mimetype
+
+# front controller pattern
+   = facade 퍼사드 패턴
+# 템플릿 메서드 패턴 -> try-catch-finally 없애는 패턴
+
+# org reflection 리플랙션
+
+#java Annotaion
+
+
+
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        System.out.println("---------------------------");
+
+        String path = req.getRequestURI();
+        System.out.println(path);
+
+        Reflections reflections = new Reflections("org.zerock.fc.controller.sub", TypeAnnotationsScanner.class);
+
+        Set<Class<?>> annotated = reflections.getTypesAnnotatedWith(Controller.class);
+
+        System.out.println(annotated);
+
+        Iterator<Class<?>> it = annotated.iterator();
+
+        while(it.hasNext()) {
+
+            Class<?> clz = it.next(); //클래스임 몰라서 ? 사용
+
+            Controller annotation = clz.getDeclaredAnnotation(Controller.class);
+
+            String annoValue = annotation.value();
+            
+            //실행해야 하는 컨트롤러 찾기
+            if(path.startsWith(annoValue)) {
+                System.out.println("==========================");
+                System.out.println(clz);
+            }//end if
+            
+            
+            //메서드 찾기
+            
+
+        }
+
+# java reflactors constructor
