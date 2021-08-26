@@ -1,0 +1,49 @@
+
+
+<Function loadDoc()>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+    }
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+
+
+#promise
+
+#1. js에서 전역변수가 안좋은이유
+  - 클로저를 이용하면 전역변수 피할수 있음
+#2. 클로저의 의미
+  - 
+#3. 클로저를 사용해서 해결할 수 있는 것
+#4. 클로저를 쓸때 어떤경우에 사용하는지
+
+#지도에 목록추가 마커추가 가게이름나오게
+
+#Spring책
+
+
+
+
+
+
+--------------------------------------------
+
+
+
+
+
+<마커추가하기 해요------------
+
+map코드 볼게요~
+
+퇴실 신호 보내요
+
+
+
+
+
+
+
