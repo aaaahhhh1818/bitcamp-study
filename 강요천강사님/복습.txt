@@ -1,0 +1,2 @@
+3tier의 법칙
+session / cookie
