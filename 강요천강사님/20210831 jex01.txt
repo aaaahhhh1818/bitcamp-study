@@ -1,0 +1,87 @@
+# 의존성 주입 종류
+
+#핸들러매핑의 종류
+
+1. SimpleUrlHandlerMapping
+
+- URL과 Controller을 직접 맵핑
+
+
+
+
+
+2. BeanNameUrlHandlerMapping
+
+- URL과 Bean이름을 가지고 Controller 맵핑
+
+
+
+
+
+3. ControllerBeanNameHandlerMapping
+
+- Bean의 아이디나 이름을 이용해 맵핑
+
+
+
+
+
+4. ControllerClassNameHandlerMapping
+
+- URL과 Controller 명을 일정한 규칙으로 맵핑
+
+
+
+
+
+5. DefaultAnnotaitonHandlerMapping
+
+- @RequestMapping 어노테이션을 이용하여 요청을 처리할 컨트롤러를 구현
+
+#resolver
+
+mybatis 오브젝트 받기?
+
+# spring 파라미터 gathering customize
+
+파라미터값 자동으로 받는데 그 값을 커스터마이징해서 받아본적있는지
+
+
+파라미터값이 일치하지 않거나 빈 값이 있다면?
+-> converter를 만든다
+
+# HanglerMethodArgumentResolver
+
+https://www.baeldung.com/spring-mvc-custom-data-binder
+
+
+# 날짜 정규표현식 체크
+^((19|20)\d\d)?([- /.])?(0[1-9]|1[012])([- /.])?(0[1-9]|[12][0-9]|3[01])$
+
+*정규식 해석 (ex : yyyyMMdd)
+
+ - (19|20) :  19 또는 20로 year 앞 2자 표현
+
+ - \\d{2} : 2자리 숫자(00~99 까지) year 뒤 2자 표현
+
+ - (0[1-9]|1[012]) : 0과 1~9에서 1개 또는 1과 012에서 1개로 month 2자 표현
+
+ - (0[1-9]|[12][0-9]|3[01]) : 0과 1~9 또는 1,2와 0~9 또는 3과 0,1로 day 2자 표현
+
+---------------------------------------
+
+숙제 
+
+
+#spring bean validation
+
+DTO에서 하는 일 중 하나가 validation 임
+메세지 다 필요없고!!!!!
+
+@NotNull 이런거 하나만
+
+이런것들 안들어오면 예외 발생 !
+..해보기....? 어케함 
+
+
+
