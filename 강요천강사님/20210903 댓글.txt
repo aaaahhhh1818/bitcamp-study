@@ -1,0 +1,38 @@
+# RESTful
+
+https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
+
+jpa -long오ㅐ씀
+
+래퍼타입
+
+매쉬업
+
+#ajax cors
+
+#axios
+ㄴ get, post,
+ㅔㅕㅅ qkdtlr
+
+
+Using jsDelivr CDN:
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+const getBreeds = async () => {
+  try {
+    return await axios.get('https://dog.ceo/api/breeds/list/all');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
+#async await
+
+
+----------------------
+
+#검색을 지우는 버튼? 초기화?
+
+#

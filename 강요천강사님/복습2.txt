@@ -1,0 +1,13 @@
+# 캐싱
+
+# cros
+
+# promise
+pending : 초기 상태 ~ 성공 또는 실패 결과가 나오기 전의 상태
+fulfilled : 동작이 성공된 상태
+rejected : 동작이 실패한 상태
+
+#트랜잭션
+
+# origin
+# HTTP 헤더
