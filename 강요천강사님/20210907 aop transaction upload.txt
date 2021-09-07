@@ -1,0 +1,45 @@
+# 프록시
+
+# 횡단 관심사
+
+https://docs.spring.io/spring-framework/docs/5.3.9/reference/html/core.html#spring-core
+
+@EnableAspectJAutoProxy
+
+#defalut 블럭
+
+
+1. 라이브러리 추가 -implementation
+
+2. @Congiguration 클래스 AOPConfig
+
+3. RootConfig @import
+
+4. TimeLogAspect 추가
+
+5. 
+
+
+
+문서 
+
+pointcut
+
+advice
+
+
+
+
+트랜젝션
+
+면접문제
+
+* 낙관적 잠금 비관적 잠금
+
+* 트랜젝션
+
+
+# select에 taransaction필요한지
+https://hojak99.tistory.com/602
+
+MultipartConfigElement

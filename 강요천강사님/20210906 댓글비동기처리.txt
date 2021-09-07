@@ -1,0 +1,29 @@
+- 댓글 목록 가져오기
+- 금요일에 했던 reply 끝내기 !
+
+스프링은 소셜로그인 빼고 전통적인 것만 일단 진도 나가고 플젝 진행
+
+부트 -> 개발시간 짧음
+설정 x, sql x
+
+# @Autowired(required = false)
+
+# 반정규화
+
+- 게시판 만드는데 테이블 5개 이상
+ 테이블 댓글 댓글좋아요 회원 첨부파일 ...
+
+#코틀린
+@Data builder.... 걸기 귀찮을 때 코틀린 사용가능
+
+#js 즉시실행함수
+
+# js 전개연산자 spread Operator
+
+# js getAttribute('value'), .value 차이
+
+# js matches()
+
+# let const 다시 보기 ㅠㅠ
+
+# getAtrtibute('value'), .value
