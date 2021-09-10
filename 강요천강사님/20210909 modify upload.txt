@@ -1,0 +1,40 @@
+left outer join
+inner join
+
+# MyBatis
+resultMap
+
+modal
+-> bootstrap 사이트 들어가서 확인
+https://getbootstrap.com/docs/5.1/components/modal/
+
+-------------------------------
+
+
+package org.lah.b1.domain;
+
+import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class LahBoard {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long bno;
+    
+    private String title;
+    private String content;
+    private String writer;
+    
+}
+
+-------------------------------
