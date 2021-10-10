@@ -1,0 +1,14 @@
+# 문자열 formatting
+
+# @RequiredArgusConstructor
+
+# persistent_logins
+
+
+language : html, css, js, java, jquery, ajax
+library api : Log4j, JSTL, Lombok, kakaomap, hikariCP, bootstrap
+framwork : spring mvc
+server : apache tomcat
+ide : intellij
+ci : git, github
+database : mysql, mybatis
